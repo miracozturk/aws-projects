@@ -20,26 +20,26 @@ aws configure
 
 ```bash
 aws ec2 create-security-group \
-    --group-name roman_numbers_sec_grp \
+    --group-name mozt_sec_grp_roman_numbers \
     --description "This Sec Group is to allow ssh and http from anywhere"
 ```
 
 - We can check the security Group with these commands
 ```bash
-aws ec2 describe-security-groups --group-names roman_numbers_sec_grp
+aws ec2 describe-security-groups --group-names mozt_sec_grp_roman_numbers
 ```
 
 2. Create Rules of security Group
 
 ```bash
 aws ec2 authorize-security-group-ingress \
-    --group-name roman_numbers_sec_grp \
+    --group-name mozt_sec_grp_roman_numbers \
     --protocol tcp \
     --port 22 \
     --cidr 0.0.0.0/0
 
 aws ec2 authorize-security-group-ingress \
-    --group-name roman_numbers_sec_grp \
+    --group-name mozt_sec_grp_roman_numbers \
     --protocol tcp \
     --port 80 \
     --cidr 0.0.0.0/0
